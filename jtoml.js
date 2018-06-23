@@ -18,7 +18,7 @@ async function main (opts, ...args) {
     process.stderr = fun(out => out.map(_ => {
       if (!seenOutput) {
         seenOutput = true
-        realStdin.end()
+       if (realStdin.isTTY)  realStdin.end()
       }
       return _
     }).pipe(realStderr))
@@ -30,7 +30,7 @@ async function main (opts, ...args) {
     process.stdout = fun(out => out.map(_ => {
       if (!seenOutput) {
         seenOutput = true
-        realStdin.end()
+        if (realStdin.isTTY) realStdin.end()
       }
       return _
     }).map(_ => {
