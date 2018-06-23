@@ -1,31 +1,43 @@
 {
-  "name": "tjson",
+  "name": "jtoml",
+  "version": "1.0.0",
   "author": {
     "name": "Rebecca Turner",
     "email": "me@re-becca.org",
     "twitter": "ReBeccaOrg"
   },
+  "description": "Use the json cli to read and query your TOML",
+  "bin": {
+    "jtoml": "./jtoml.js"
+  },
   "license": "ISC",
   "scripts": {
-    "prerelease": "npm t",
     "release": "standard-version -s",
     "postrelease": "npm publish && git push --follow-tags",
-    "pretest": "standard",
-    "test": "tap -J -100 test/*.js",
     "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
     "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
   },
   "devDependencies": {
     "weallbehave": "*",
     "weallcontribute": "*",
-    "standard": "*",
-    "standard-version": "*",
-    "tap": "*"
+    "standard-version": "*"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iarna/tjson.git"
+    "url": "https://github.com/iarna/jtoml.git"
   },
-  "bugs": "https://github.com/iarna/tjson/issues",
-  "homepage": "https://npmjs.com/package/tjson"
+  "bugs": "https://github.com/iarna/jtoml/issues",
+  "homepage": "https://npmjs.com/package/jtoml",
+  "dependencies": {
+    "@iarna/cli": "^2.0.2",
+    "@iarna/toml": "^1.5.6",
+    "funstream": "^3.0.0",
+    "json": "^9.0.6"
+  },
+  "bundleDependencies": [
+    "@iarna/cli",
+    "@iarna/toml",
+    "funstream",
+    "json"
+  ]
 }
