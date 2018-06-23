@@ -15,20 +15,20 @@ and displays it.
 ## EXAMPLES
 
 ```
-$ echo 'foo="bar"}' | json
+$ echo 'foo="bar"}' | jtoml
 foo = "bar"
 
-$ echo 'foo="bar"' | json foo
+$ echo 'foo="bar"' | jtoml foo
 bar
 
-$ echo 'fred = {age=42}' | json fred.age    # '.' for property access
+$ echo 'fred = {age=42}' | jtoml fred.age    # '.' for property access
 42
 
 $ echo '[fred]
-age = 42' | json fred.age    # '.' for property access
+age = 42' | jtoml fred.age    # '.' for property access
 42
 
-$ echo 'age = 10' | json -e 'this.age++'
+$ echo 'age = 10' | jtoml -e 'this.age++'
 {
   "age": 11
 }
