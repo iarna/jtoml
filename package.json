@@ -30,7 +30,7 @@
   "homepage": "https://npmjs.com/package/jtoml",
   "dependencies": {
     "@iarna/cli": "^2.0.2",
-    "@iarna/toml": "^1.5.6",
+    "@iarna/toml": "^1.6.0",
     "funstream": "^3.0.0",
     "json": "^9.0.6"
   },

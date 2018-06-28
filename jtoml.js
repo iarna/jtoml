@@ -37,7 +37,11 @@ async function main (opts, ...args) {
       try {
         return TOML.stringify(JSON.parse(_))
       } catch (ex) {
-        return _
+        try {
+          return TOML.stringify.value(JSON.parse(_))
+        } catch (ex) {
+          return _
+        }
       }
     }).pipe(realStdout))
     console.log = function (...args) {
